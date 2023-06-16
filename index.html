@@ -20,10 +20,101 @@
             .grid-2 { display: grid; grid-template-columns: 10rem 1fr; gap: 0.2rem; }
             .grid-2 span:nth-child(odd) { justify-self: end; text-align: right; }
             .grid-2.border { gap: 0; border-bottom: 1px solid black; border-left: 1px solid black; width: 20rem; }
-            .grid-2.border span { width: calc(100% - 0.4rem); padding: 0 0.2rem; border-top: 1px solid black; border-right: 1px solid black; }
+            .grid-2.border span { width: 100%; padding: 0 0.2rem; border-top: 1px solid black; border-right: 1px solid black; }
+
+            .header { width: 85vw; margin: 15vh auto 10vh; padding: 2rem; background-color: #ffffff77; backdrop-filter: blur(5px); border-radius: 5px; }
+            .header h1 { font-size: 2.5rem; }
+            .section { width: 75vw; margin: 15vh auto 10vh; padding: 2rem; background-color: #ffffff; border-radius: 5px; }
+            .section h1 { font-size: 2.5rem;}
+            .background { width: 100%; z-index: -1; top: 0; left: 0; position: fixed; height: 100vh; background-image: url(img/all_house_render.jpg); background-position: 50%; background-size: cover;}
+
+            * {box-sizing:border-box}
+
+            .overlay { position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: #000b; visibility: hidden; }
+            .visible { visibility: visible; }
+            .modal { position: absolute; left: 0; top: 0; margin: 5vh 10vw;border-radius: 0.5rem;background-color: var(--modal-background, white); padding: 1rem; }
+            .modal * img { max-width: 85vw; max-height: 85vh; }
+            .modal h1 {margin: 0.5rem 0;}
+
+            /* Slideshow container */
+            .slideshow-container { max-width: 1000px; position: relative; margin: auto; }
+            /* Hide the images by default */
+            .mySlides { display: none; }
+            /* Next & previous buttons */
+            .prev, .next { cursor: pointer; position: absolute; top: 50%; width: auto; margin-top: -22px; padding: 16px; color: white; font-weight: bold; font-size: 18px; transition: 0.6s ease; border-radius: 0 3px 3px 0; user-select: none;}
+            /* Position the "next button" to the right */
+            .next { right: 0; border-radius: 3px 0 0 3px;}
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+            /* Caption text */
+            .text { color: #f2f2f2; font-size: 15px; padding: 8px 12px; position: absolute; bottom: 8px; width: 100%; text-align: center;}
+            /* Number text (1/3 etc) */
+            .numbertext { color: #f2f2f2; font-size: 12px; padding: 8px 12px; position: absolute; top: 0;}
+            /* The dots/bullets/indicators */
+            .dot { cursor: pointer; height: 15px; width: 15px; margin: 0 2px; background-color: #bbb; border-radius: 50%; display: inline-block; transition: background-color 0.6s ease;}
+            .active, .dot:hover { background-color: #717171; }
+            /* Fading animation */
+            .fade {animation-name: fade;animation-duration: 1.5s;}
+            @keyframes fade { from {opacity: .4} to {opacity: 1} }
+
+            .image-column { text-align: center; }
+            .image-column img { max-height: 10rem; }
+            header { padding: 2rem; background: #ffffff22; backdrop-filter: blur(2px);}
+            header h1 { float: left; font-size: 3rem; }
+            nav { text-align: right; }
+            nav a {text-decoration: none; font-size: 2rem; padding: 1rem; color: #273e6e; text-transform: uppercase;}
+            nav a:hover { color: #717171; }
         </style>
+
     </head>
     <body>
+        <header>
+            <h1>Wohnfels GbR</h1>
+            <nav>
+                <a href="#mietobjekte">Mietobjekte</a>
+                <a href="#kontakt">Kontakt</a>
+            </nav>
+        </header>
+        <div class="background">&nbsp;</div>
+        <section id="mietobjekte" class="header">
+            <h1>Mietobjekte</h1>
+        </section>
+
+        <section class="section" style="min-height: 17rem;">
+            <h1>Übersicht</h1>
+            <img style="float: left;max-height: 10rem;" onclick="openModal(1)" src="img/20230514_175151.jpg">
+            <h2 style="margin-left: 8rem;">Exklusive, lichtdurchflutete 3-Zimmer-Wohnung im Loft-Style. Großzügiges Wohnzimmer und Südbalkon zum Erstbezug</h2>
+
+            <p style="margin-left: 8rem; margin-top: 1rem;">Die exklusive Dachgeschosswohnung verfügt über ein großzügiges Wohn- und Esszimmer und weckt dank der
+                luxuriösen Innenausstattung Loft-Gefühle. Durch X Dachgauben sind alle Zimmer lichtdurchflutet.
+                Abgerundet wird die Wohnung durch ein voll-ausgestattetes Tageslichtbad mit großer Regendusche und einer
+                separaten Gästetoilette.</p>
+
+            <div style="text-align: center;">
+                <a href="#gallerie">Gallerie</a>
+                <a href="#beschreibung">Beschreibung</a>
+                <a href="#ausstattung">Ausstattung</a>
+                <a href="#eckdaten">Eckdaten</a>
+                <a href="#objektbeschreibung">Objektbeschreibung</a>
+                <a href="#lage">Lage</a>
+                <a href="#anhaenge">Anhänge</a>
+                <a href="#kontakt">Kontakt</a>
+            </div>
+        </section>
+
+        <section id="gallerie" class="section image-column">
+            <h1>Gallerie</h1>
+            <img onclick="openModal(1)" src="img/20230514_175151.jpg">
+            <img onclick="openModal(2)" src="img/20230514_175156.jpg">
+            <img onclick="openModal(3)" src="img/20230514_175206.jpg">
+            <img onclick="openModal(4)" src="img/20230514_175259.jpg">
+            <img onclick="openModal(5)" src="img/DSC_7889.NEF.jpg">
+            <img onclick="openModal(6)" src="img/DSC_7890.NEF.jpg">
+            <img onclick="openModal(7)" src="img/DSC_7892.NEF.jpg">
+        </section>
+
+
+
 <!--        <div class="navbar">-->
 <!--            <nav class="primary large">-->
 <!--                <a id="menu-button" class="item button hide-medium hide-large" href="javascript:void(0);" onclick="document.getElementById('navSmall').classList.toggle('hide')" title="Toggle Navigation Menu"><span class="material-symbols-outlined">menu</span></a>-->
@@ -41,18 +132,23 @@
 <!--            <a class="large contact-button" href="#contact">Get in Contact</a>-->
 <!--        </header>-->
 
-        <section class="main">
-            <h1>Neugebaute 3-Zimmer Dachgeschosswohnung mit großzügigem Wohnzimmer und Westbalkon</h1>
+        <section id="beschreibung" class="section">
             <h2>Wohnungsbeschreibung</h2>
-            <p>Diese exklusive Dachgeschosswohnung verfügt über ein großzügiges Wohn- und Esszimmer. Dachgauben bieten
-                in allen Zimmern ein helles und offenes Wohngefühl. Die Küche ist im Wohnbereich integriert und eröffnet
-                ein offenes, inklusives Kocherlebnis. Abgerundet wird die Wohnung durch das Tageslichtbad mit großer
-                Fliesendusche und eine weitere getrennte Toilette.</p>
+            <p>Die exklusive Dachgeschosswohnung verfügt über ein großzügiges Wohn- und Esszimmer und weckt dank der
+                luxuriösen Innenausstattung Loft-Gefühle. Durch X Dachgauben sind alle Zimmer lichtdurchflutet.
+                Abgerundet wird die Wohnung durch ein voll-ausgestattetes Tageslichtbad mit großer Regendusche und
+                einer separaten Gästetoilette.</p>
+
+            <p>Dank nachhaltiger Bauweise mit Zertifizierung als Effizienzhaus 40-plus kann man von stabilen, dauerhaft
+                niedrigen Nebenkosten ausgehen. Machen Sie dieses seltene Fundstück zu Ihrem Wohlfühlzuhause!</p>
+
             <p>Die Ausstattung mit Eichenparkett, Fußbodenheizung und Lüftungsanlage mit Wärmerückgewinnung, sowie die
                 gute Raumaufteilung machen diese Neubauwohnungen zu etwas ganz besonderem.</p>
+
             <p>Schauen Sie sich die Wohnung einfach an und überzeugen Sie sich selbst von dieser wunderschönen Immobilie
                 in einer gut angebundenen, grünen Lage.</p>
-
+        </section>
+        <section id="ausstattung" class="section">
             <h2>Ausstattung</h2>
             <ul>
                 <li>6,00 m² Westbalkon</li>
@@ -82,7 +178,8 @@
                 <li>Zugang zu Fahrradstellplätzen und Gartenfläche</li>
                 <li>Die Wohnung wird ohne Einbauküche vermietet.</li>
             </ul>
-
+        </section>
+        <section id="eckdaten" class="section">
             <h2>Eckdaten</h2>
             <p class="grid-2">
                 <span>Wohnfläche:</span> <span>106,07m²</span>
@@ -92,7 +189,8 @@
                 <span>Kaution:</span> <span>7.800 €</span>
                 <span>Verfügbar ab:</span> <span>1.7.2023</span>
             </p>
-
+        </section>
+        <section id="objektbeschreibung" class="section">
             <h2>Objektbeschreibung:</h2>
             <p>Das Haus wurde in nachhaltiger Holzständerbauweise als Effizienzhaus 40-plus errichtet und entspricht den
                 neuesten technischen und energetischen Standards. Neben dem 40-plus-Standard ist das Haus auch mit dem
@@ -107,7 +205,8 @@
                 handelt es sich um Erstbezug nach Neubau. Die Häuser sind an das neue Glasfasernetz für schnelles
                 Internet angeschlossen. Ebenso sind ein Kabelanschluss und eine Gegensprechanlage vorhanden.</p>
             <p>Der Garten der Wohnanlage kann von allen Parteien gemeinschaftlich genutzt werden.</p>
-
+        </section>
+        <section id="lage" class="section">
             <h2>Lage:</h2>
             <p>Der Standort im Stadtteil Aubing liegt in einem ruhigen Wohngebiet an einer Bogenstraße ohne
                 Durchgangsverkehr. In direkter Nachbarschaft befindet sich eine große Grünanlage mit zwei sehr schönen
@@ -125,7 +224,8 @@
             <p>E-Ladestationen für PKW der Stadtwerke München befinden sich 2 min entfernt.</p>
             <p>Im benachbarten Stadtteil Freiham befinden sich ein Möbelhaus, ein Küchenstudio, Baumärkte und zahlreiche
                 Fachgeschäfte. Eine moderne Boulderhalle und Tennisplätze ergänzen das Angebot an Sportmöglichkeiten.</p>
-
+        </section>
+        <section id="anhaenge" class="section">
             <h2>Anhänge:</h2>
             <p>Wohnflächenaufteilung</p>
             <p class="grid-2 border">
@@ -143,30 +243,117 @@
 
         </section>
 
-        <section class="alternative">
-            <img class="big" src="/img/psychology.svg" aria-hidden="true" alt="" />
-            <div>
-                <h1>Beratung</h1>
-                <h2>Falls Sie Hilfe beim Entwerfen, Designen oder Entscheiden von Software-Lösungen benoetigen, stehen wir ebenfalls gerne beratend zur Seite.</h2>
-                <p class="text-alt">In unseren Erfahrungsschatz fallen ebenfalls die Konzepetion und Architektur von stabiler und cleverer Software,
-                    die weit über die reine Entwicklung hinaus geht. Weiterhin werden wir auch beratend tätig, um bereits bestehende Produkte zu beurteilen und ggf.
-                    neu zu entwerfen oder umzugstalten.</p>
+        <section class="overlay images">
+            <div class="modal">
+                <!-- Slideshow container -->
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <div class="numbertext">1 / 7</div>
+                        <img src="img/20230514_175151.jpg">
+                        <div class="text">Gang</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">2 / 7</div>
+                        <img src="img/20230514_175156.jpg" style="width:100%">
+                        <div class="text">Raum 2</div>
+                    </div>
+
+                    <div class="mySlides fade">
+                        <div class="numbertext">3 / 7</div>
+                        <img src="img/20230514_175206.jpg" style="width:100%">
+                        <div class="text">Raum 2</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">4 / 7</div>
+                        <img src="img/20230514_175259.jpg" style="width:100%">
+                        <div class="text">Raum 1</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">5 / 7</div>
+                        <img src="img/DSC_7889.NEF.jpg" style="width:100%">
+                        <div class="text">Wohnzimmer / Küche</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">6 / 7</div>
+                        <img src="img/DSC_7890.NEF.jpg" style="width:100%">
+                        <div class="text">Wohnzimmer / Küche</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <div class="numbertext">7 / 7</div>
+                        <img src="img/DSC_7892.NEF.jpg" style="width:100%">
+                        <div class="text">Wohnzimmer</div>
+                    </div>
+
+
+                    <!-- Next and previous buttons -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+
+                <!-- The dots/circles -->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                    <span class="dot" onclick="currentSlide(7)"></span>
+                </div>
             </div>
         </section>
 
-        <section id="contact">
-            <img class="big" src="/img/alternate_email.svg" aria-hidden="true" alt="" />
-            <div>
-                <h1>Kontakt</h1>
-                <h2>Kontaktieren sie uns einfach per Mail.</h2>
-                <p class="text-alt">Beschreiben Sie kurz um was es geht und wir setzen uns umgehend mit Ihnen in Verbindung.</p>
-                <p class="text-alt">Email: michael@stits.dev</p>
-                <a href="mailto:michael@stits.dev" style="float: right; margin-right: 3rem;" class="contact-button">send Mail</a>
-            </div>
+        <section id="kontakt" class="section">
+            <h1>Kontakt</h1>
+            <h2>Kontaktieren sie uns einfach per Mail.</h2>
+            <p class="text-alt">Beschreiben Sie kurz um was es geht und wir setzen uns umgehend mit Ihnen in Verbindung.</p>
+            <p class="text-alt">Email: wohnfels@gmail.com</p>
+            <a href="mailto:wohnfels@gmail.com" style="float: right; margin-right: 3rem;" class="contact-button">send Mail</a>
         </section>
 
         <footer>
             <a href="/impressum.html">Impressum</a>
         </footer>
     </body>
+
+    <script>
+        const overlay = document.querySelector('.overlay')
+        overlay.addEventListener('click', e => {
+            if(e.target===overlay && overlay.classList.contains('visible')) { overlay.classList.remove('visible');e.stopPropagation();}
+        })
+        function openModal(i) {
+            overlay.classList.add('visible');
+            currentSlide(i);
+        }
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
 </html>
