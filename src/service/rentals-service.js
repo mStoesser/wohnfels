@@ -24,7 +24,7 @@ const flats = [
         previewImg: '/img/DSC_7890.NEF.jpg',
         rooms: '3',
         squareMeter: '106,07',
-        available: true,
+        available: false,
         priceBase: '2.400',
         priceOverall: '2.600',
         surety: '7.800',

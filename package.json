@@ -3,13 +3,20 @@
   "version": "1.0.0",
   "scripts": {
     "start": "snowpack dev",
-    "build": "snowpack build"
+    "build": "rollup -c rollup.config.js"
   },
   "dependencies": {
     "lit-html": "^2.7.4",
     "@vaadin/router": "^1.7.5"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.24.5",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "babel-plugin-transform-html-import-to-string": "^2.0.0",
+    "rollup": "^2.79.1",
+    "rollup-plugin-copy": "^3.5.0",
     "snowpack": "^3.8.8"
   }
 }

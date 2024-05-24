@@ -1,1 +1,109 @@
-:root{--preview-card-size: 18rem;--secondary-color: #3D7B31}body,h1,h2,h3,h4,h5,h6{font-family:"Nunito",sans-serif;font-size:11pt;font-weight:400;margin:0;line-height:1.5}*{box-sizing:border-box}body{background-color:#fff}h1{font-size:13pt;font-weight:bold}h2{font-size:11pt;font-weight:bold}.main{width:210mm;padding:20mm 20mm;margin:2rem auto;background-color:#fff}header{background:#ffffff;color:#fff;display:grid;grid-template-columns:19rem auto;box-shadow:0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23)}header .logo{width:13rem;margin-top:2rem;margin-left:1rem}header h1{font-size:3rem}nav{text-align:right;vertical-align:bottom;align-self:end}nav a{text-decoration:none;font-size:1.6rem;padding:1rem;color:#000;font-weight:bold}nav a:hover{color:#717171}.component{display:block;background-color:#fff}section,footer{width:75vw;margin:0 auto;padding:2rem}footer{text-align:right}section h1{font-size:2.5rem;text-align:center}.background{width:100%;z-index:-1;top:0;left:0;position:fixed;height:50vh;background-image:url(img/all_house_render.jpg);background-position:50%;background-size:cover}wohnfels-overus{margin-top:25rem}.overus{margin:1rem 3rem}.cards{display:grid;grid-template-columns:repeat(auto-fill,var(--preview-card-size));gap:1.5rem;padding:1rem;justify-items:center}.card{border-radius:5px;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);background-color:#efefef;text-decoration:none;color:#000}.card .teaser-image{border-radius:5px;width:var(--preview-card-size);grid-column:1 / span 2;margin:0 auto}.card .teaser-title{margin:.2rem .5rem;grid-column:1 / span 2}.card .teaser-text{margin:.2rem .5rem;grid-column:1 / span 2}.card .rooms,.card .squareMeter{margin:.2rem .5rem .5rem .5rem;font-weight:bold}.card .squareMeter{text-align:right}.not-available{position:relative}.not-available:before{content:"Vermietet";transform:rotate(-15deg);font-size:3rem;color:red;font-weight:bold;position:absolute;bottom:2.2rem;left:1.5rem}.contact-container{display:grid;grid-template-columns:1fr 1fr;grid-gap:3rem}.contact-container .contact-text{text-align:right;padding-right:2rem;border-right:3px solid var(--secondary-color)}.contact-container .contact-mail{font-size:2rem;font-weight:bold;color:var(--secondary-color)}.gallery{vertical-align:top;padding-bottom:0}.preview{max-width:max(40vw,30rem);max-height:max(40vh,20rem);padding-right:.5rem;padding-bottom:.5rem}.preview-container{width:max(40vw,30rem);height:max(40vh,20rem);float:left;text-align:center}.interior-preview{width:30rem;float:left;margin-right:2.5rem}.image-column{text-align:center;display:grid;grid-template-columns:repeat(auto-fill,minmax(8rem,1fr));gap:.5rem}.thumbnail{max-width:8rem;margin-right:.5rem;margin-bottom:.5rem}.short-facts{margin-top:2rem;display:grid;grid-template-rows:1fr 1fr;grid-auto-flow:column;grid-gap:.2rem;text-align:center}.short-facts span:nth-child(odd){font-size:1.2rem;font-weight:bold;vertical-align:bottom}.tags{text-align:center;margin-top:1.5rem}.tags span{background-color:#efefef;padding:.3rem .6rem;margin:.5rem}.facets{margin:1.5rem 2.2rem;display:grid;grid-template-columns:10rem 1fr 10rem 1fr;gap:.2rem}.facets span:nth-child(odd){color:#333;font-style:italic}.overlay{position:fixed;left:0;top:0;width:100%;height:100%;background:#000b;visibility:hidden}.visible{visibility:visible}.modal{position:absolute;left:0;top:0;margin:5vh 10vw;border-radius:.5rem;background-color:var(--modal-background, white);padding:1rem}.modal * img{max-width:85vw;max-height:85vh}.modal h1{margin:.5rem 0}.slideshow-container{max-width:1000px;position:relative;margin:auto}.mySlides{display:none}.prev,.next{cursor:pointer;position:absolute;top:50%;width:auto;margin-top:-22px;padding:16px;color:#fff;font-weight:bold;font-size:18px;transition:.6s ease;border-radius:0 3px 3px 0;user-select:none}.next{right:0;border-radius:3px 0 0 3px}.prev:hover,.next:hover{background-color:#000c}.text{color:#f2f2f2;font-size:15px;padding:8px 12px;position:absolute;bottom:8px;width:100%;text-align:center}.numbertext{color:#f2f2f2;font-size:12px;padding:8px 12px;position:absolute;top:0}.dot{cursor:pointer;height:15px;width:15px;margin:0 2px;background-color:#bbb;border-radius:50%;display:inline-block;transition:background-color .6s ease}.active,.dot:hover{background-color:#717171}.fade{animation-name:fade;animation-duration:1.5s}@keyframes fade{0%{opacity:.4}to{opacity:1}}
+:root {
+    --preview-card-size: 18rem;
+    --secondary-color: #3D7B31;
+}
+
+body,h1,h2,h3,h4,h5,h6 {
+    font-family: 'Nunito', sans-serif;
+    font-size: 11pt;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.5;
+}
+* {box-sizing:border-box}
+body { background-color: white; }
+h1 { font-size: 13pt; font-weight: bold; }
+h2 { font-size: 11pt; font-weight: bold; }
+.main { width: 210mm; padding: 20mm 20mm; margin: 2rem auto; background-color: white; }
+
+/* HEADER - NAV */
+header { background: #ffffff; color: white; /*backdrop-filter: blur(2px);*/ display: grid; grid-template-columns: 19rem auto; box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); }
+header .home {   }
+header .logo { width: 13rem; margin-top: 2rem; margin-left: 1rem; }
+header h1 { font-size: 3rem; }
+nav { text-align: right; vertical-align: bottom; align-self: end; }
+nav a {text-decoration: none; font-size: 1.6rem; padding: 1rem; color: #000;font-weight: bold;}
+nav a:hover { color: #717171; }
+
+.component { display: block; background-color: white; }
+section, footer { width: 75vw; margin: 0 auto; padding: 2rem; }
+footer { text-align: right; }
+section h1 { font-size: 2.5rem; text-align: center; }
+.background { width: 100%; z-index: -1; top: 0; left: 0; position: fixed; height: 50vh;background-image: url(img/all_house_render.jpg); background-position: 50%; background-size: cover;}
+
+wohnfels-overus { margin-top: 25rem; }
+.overus { margin: 1rem 3rem; }
+/* rentals */
+.cards {display: grid; grid-template-columns: repeat(auto-fill, var(--preview-card-size)); gap: 1.5rem; padding: 1rem; justify-items: center; }
+.card { border-radius: 5px; display: grid; grid-template-columns: 1fr 1fr;box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);background-color: #efefef;text-decoration: none; color: black;}
+.card .teaser-image { border-radius: 5px; width: var(--preview-card-size); grid-column: 1 / span 2; margin: 0 auto; }
+.card .teaser-title { margin: 0.2rem 0.5rem; grid-column: 1 / span 2; }
+.card .teaser-text { margin: 0.2rem 0.5rem; grid-column: 1 / span 2; }
+.card .rooms, .card .squareMeter { margin: 0.2rem 0.5rem 0.5rem 0.5rem; font-weight: bold; }
+.card .squareMeter { text-align: right; }
+.not-available {position: relative; }
+.not-available:before { content: "Vermietet"; transform: rotate(-15deg); font-size: 3rem; color: red; font-weight: bold; position: absolute; bottom: 2.2rem; left: 1.5rem;
+}
+
+.contact-container { display: grid; grid-template-columns: 1fr 1fr; grid-gap: 3rem; }
+.contact-container .contact-text { text-align: right; padding-right: 2rem; border-right: 3px solid var(--secondary-color); }
+.contact-container .contact-mail { font-size: 2rem; font-weight: bold; color: var(--secondary-color); }
+
+/* rental-details */
+.gallery {
+    vertical-align: top; padding-bottom: 0;
+    /*display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;*/
+}
+.preview {
+    max-width: max(40vw, 30rem);
+    max-height: max(40vh, 20rem);
+ padding-right: 0.5rem; padding-bottom: 0.5rem;
+    /*float: left;*/
+    /*width: 30rem;*/
+}
+.preview-container { width: max(40vw, 30rem); height: max(40vh, 20rem); float: left;  text-align: center; }
+.interior-preview { width: 30rem; float: left; margin-right: 2.5rem; }
+.image-column { text-align: center;  display: grid; grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr)); gap: 0.5rem; }
+.thumbnail-container { }
+
+.thumbnail { max-width: 8rem; margin-right: 0.5rem; margin-bottom: 0.5rem; }
+
+.short-facts { margin-top: 2rem; display: grid;grid-template-rows: 1fr 1fr;grid-auto-flow: column; grid-gap: 0.2rem; text-align: center; }
+.short-facts span { }
+.short-facts span:nth-child(odd) { font-size: 1.2rem; font-weight: bold; vertical-align: bottom;  }
+/*@media (max-width: 90rem) {*/
+/*    .gallery {  grid-template-columns: 1fr; }*/
+/*    .preview { text-align: center; width: 100%; }*/
+/*    .image-column { display: initial; white-space: nowrap; height: 10rem; width: 100%; overflow-x: auto; overflow-y: hidden; }*/
+/*    .image-column img { margin-right: 0.5rem; vertical-align: top; }*/
+/*}*/
+
+.tags { text-align: center; margin-top: 1.5rem; }
+.tags span { background-color: #efefef; padding: 0.3rem 0.6rem; margin:  0.5rem; }
+
+.facets { margin: 1.5rem 2.2rem; display: grid; grid-template-columns: 10rem 1fr 10rem 1fr; gap: 0.2rem; }
+.facets span:nth-child(odd) {
+    /*justify-self: end; text-align: right; */
+    color: #333; font-style: italic; }
+
+/* Slideshow */
+.overlay { position: fixed; left: 0; top: 0; width: 100%; height: 100%; background: #000b; visibility: hidden; }
+.visible { visibility: visible; }
+.modal { position: absolute; left: 0; top: 0; margin: 5vh 10vw;border-radius: 0.5rem;background-color: var(--modal-background, white); padding: 1rem; }
+.modal * img { max-width: 85vw; max-height: 85vh; }
+.modal h1 {margin: 0.5rem 0;}
+.slideshow-container { max-width: 1000px; position: relative; margin: auto; }
+.mySlides { display: none; }
+.prev, .next { cursor: pointer; position: absolute; top: 50%; width: auto; margin-top: -22px; padding: 16px; color: white; font-weight: bold; font-size: 18px; transition: 0.6s ease; border-radius: 0 3px 3px 0; user-select: none;}
+.next { right: 0; border-radius: 3px 0 0 3px;}
+.prev:hover, .next:hover { background-color: rgba(0,0,0,0.8); }
+.text { color: #f2f2f2; font-size: 15px; padding: 8px 12px; position: absolute; bottom: 8px; width: 100%; text-align: center;}
+.numbertext { color: #f2f2f2; font-size: 12px; padding: 8px 12px; position: absolute; top: 0;}
+.dot { cursor: pointer; height: 15px; width: 15px; margin: 0 2px; background-color: #bbb; border-radius: 50%; display: inline-block; transition: background-color 0.6s ease;}
+.active, .dot:hover { background-color: #717171; }
+.fade {animation-name: fade;animation-duration: 1.5s;}
+@keyframes fade { from {opacity: .4} to {opacity: 1} }
+
+
+
+

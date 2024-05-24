@@ -10,11 +10,13 @@ class WohnfelsImpressum extends HTMLElement {
         return render(html`
             <section id="terms">
                 <h1>Impressum</h1>
-                <p>Bak Braß Falk Stößer GbR</strong><br/>
-                    Saldenburgstr. 14 <br/>
-                    81245 München<br/>
+                <p>Bak Braß Falk Stößer eGbR</strong><br/>
+                    Leienfelsstr. 21b <br/>
+                    81243 München<br/>
                     Telefon: 015771528374<br/>
-                    E-Mail: wohnfels@gmail.com
+                    E-Mail: wohnfels@gmail.com<br />
+                    Steuernummer: 143/503/21684<br />
+                    Handelsregisternummer: Amtsgericht München GsR 97
                 </p>
                 
             </section>
@@ -91,8 +93,8 @@ class WohnfelsImpressum extends HTMLElement {
                 <h3>Hinweis zur verantwortlichen Stelle</h3>
                 <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
                 <p>Michael Stößer<br>
-                    Saldenburgstr. 14<br>
-                    81245 München<br>
+                    Leienfelsstr. 21b<br>
+                    81243 München<br>
                     Telefon: +49 (0) 1577 152 83 74<br>
                     E-Mail: michael@stits.dev
                 </p>

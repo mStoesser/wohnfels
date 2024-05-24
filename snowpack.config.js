@@ -5,14 +5,7 @@
 module.exports = {
   mount: {
      src: '/'
-  },
-  optimize: {
-    bundle: true,
-    minify: true,
-    target: 'es2020',
-  },
-  buildOptions: {
-    out: 'docs/'
+    // docs: '/' // use for prod mode
   },
   routes: [
     {
